@@ -1,0 +1,38 @@
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    transition: ease-in-out 500ms;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(95, 95, 95);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.conImg{
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img{
+    width: 100px;
+    height: 100px;
+}
+
+.name{
+    transition: ease-in-out 500ms;
+    position: absolute;
+    margin-top: 130px;
+    color: white;
+    font-family: sans-serif;
+}

@@ -1,9 +1,14 @@
 const show = document.querySelector('.shower')
 const input = document.querySelector('.input')
-const btn = document.querySelector('.btn')
+const btn = document.querySelector('.img')
+const locat = document.querySelector(".loca")
+const locatText = document.querySelector('.location')
+const wS = document.querySelector('.windSpeed')
+
 let cityName;
 let lat;
 let long;
+let officalCity;
 
 
 
@@ -16,6 +21,7 @@ async function search() {
          console.log(final)
          lat = final.results[0].latitude;
          long = final.results[0].longitude
+         officalCity = final.results[0].name
         }
         
      
@@ -32,7 +38,10 @@ async function weatherApp() {
         const data = await response.json()
         console.log(`Weather is: ${data.current_weather.temperature}`)
         console.log(data)
-        show.innerHTML = `The temperature in ${cityName} is ${data.current_weather.temperature} Celcius`
+        show.innerHTML = `${data.current_weather.temperature}°C`
+        locat.src = "public/location.svg"
+        locatText.innerHTML = `${officalCity}`
+        wS.innerHTML = `The windspeed is ${data.current_weather.windspeed} ${data.current_weather_units.windspeed}`
     }
 
     catch(error){
@@ -47,6 +56,7 @@ btn.addEventListener('click', async ()=>{
     await search()    
     await weatherApp()
     input.value = "";
+    
 })
 
 

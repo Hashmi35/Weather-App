@@ -9,6 +9,7 @@ body{
     align-items: center;
 }
 .container{
+    transition: ease-in-out 500ms;
     background-color: bisque;
     display: flex;
     height: 300px;
@@ -19,6 +20,7 @@ body{
     border-radius: 20px;
     overflow: hidden;
 }
+
 
 .sContainer{
     display: flex;
@@ -53,8 +55,16 @@ body{
 }
 
 .img{
+    transition: ease-in-out 100ms;
     width: 20px;
+    scale: 1;
 }
+
+.img:active{
+    transition: ease-in-out 100ms;
+    scale: 0.8;
+}
+
 
 .child{
     width: 100%;
@@ -102,3 +112,4 @@ body{
     font-family: "Kanit", serif;
     font-style: normal;
 }
+
